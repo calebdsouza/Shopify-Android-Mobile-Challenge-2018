@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.OrderSummaryActivity">
+
+    <TextView
+        android:id="@+id/province_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:paddingLeft="8dp"
+        android:text="Orders by Province"
+        android:textColor="@color/colorAccent"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/province_recycler_view"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/province_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@android:color/darker_gray"
+        android:scrollbars="vertical"
+        android:layout_margin="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/year_header"
+        app:layout_constraintTop_toBottomOf="@+id/province_header" />
+
+    <TextView
+        android:id="@+id/year_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Orders by Year"
+        android:textColor="@color/colorAccent"
+        android:textSize="24dp"
+        android:layout_margin="4dp"
+        android:textStyle="bold"
+        android:paddingLeft="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/year_recycler_view"
+        app:layout_constraintTop_toBottomOf="@+id/province_recycler_view" />
+
+    <NumberPicker
+        android:id="@+id/select_year"
+        android:layout_width="144dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/colorAccent"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/year_recycler_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/year_header"
+        app:layout_constraintTop_toBottomOf="@+id/province_recycler_view"
+        app:layout_constraintVertical_bias="0.474"></NumberPicker>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/year_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@android:color/darker_gray"
+        android:layout_gravity="center"
+        android:paddingLeft="36dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/year_header" />
+
+</android.support.constraint.ConstraintLayout>
